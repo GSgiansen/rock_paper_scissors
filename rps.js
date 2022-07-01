@@ -52,8 +52,8 @@ function lowercase(word){
 //console.log(lowercase('LOWERS'))
 
 function capitalize(str){
-    s=str[0].toUpperCase()
-    s+=str.slice(1)
+    st=str[0].toUpperCase()
+    st+=str.slice(1)
 
-    return s
+    return st
   }
