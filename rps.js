@@ -26,15 +26,14 @@ function playRound(player,computerPlay){
 function game(){
     let comp=0
     let play=0
-    for (let i=0;i<5;i++){
-        let p=(prompt("Rock, Paper or Scissors?"))
+    //for (let i=0;i<5;i++){
+        //let p=(prompt("Rock, Paper or Scissors?"))
+        p="rock"
         let ans=playRound(p,computerPlay())
         if (ans[4]=="L") comp+=1
         else if (ans[4]=="W") play+=1
-        console.log(ans)
-        console.log(comp)
-        console.log(play)
-    }
+
+    //}
     if (play>comp) return "You Won with "+String(play)+" points"
     else if (play<comp) return 'Computer Won with '+String(comp)+" points"
     else return "Its a major tie!!!!"
@@ -57,3 +56,30 @@ function capitalize(str){
 
     return st
   }
+function buttonpressed(a){
+    console.log(a)
+
+}
+const container = document.querySelector('#container');
+const rock =document.createElement("button")
+const paper =document.createElement("button")
+const scissors =document.createElement("button")
+
+rock.classList.add("rock")
+rock.textContent="Rock!"
+rock.value="rock"
+rock.onclick=function() {buttonpressed(rock.value)}
+container.appendChild(rock)
+
+paper.classList.add("paper")
+paper.textContent="Paper!"
+paper.value="paper"
+paper.onclick=function() {buttonpressed(paper.value)}
+
+
+scissors.classList.add("scissors")
+scissors.textContent="Scissors!"
+scissors.value="scissors"
+scissors.onclick=function() {buttonpressed(scissors.value)}
+container.appendChild(scissors)
+container.appendChild(paper)
